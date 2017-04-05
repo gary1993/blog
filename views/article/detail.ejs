@@ -1,0 +1,55 @@
+<%-include ../include/header.ejs%>
+
+    <h1><%=article.topic%></h1>
+    <div class="detail-info">
+        <p class="pull-left">作者：
+            <a href="/user/mycenter?_id=<%=article.author._id%>">
+                <%=article.author.username%>
+            </a>
+        </p>
+        <p class="pull-right">时间：<%=article.date%></p>
+    </div>
+<%if(article.author._id == userId){%>
+<div class="handle-btn-wrapper">
+    <a class="pull-right" href="/article/delete?_id=<%=article._id%>">删除</a>
+    <a class="pull-right" href="/article/update?_id=<%=article._id%>">编辑</a>
+</div>
+<%}%>
+    <%if(article.picture){%>
+        <div class="img-box">
+            <img src= <%=article.picture%>>
+        </div>
+    <%}%>
+    <pre><%=article.content%></pre>
+
+    <form class="comment-form" action="/article/comment?_id=<%=article._id%>" method="post">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-10">
+                    <textarea class="form-control" rows="3" name="content" placeholder="说说你的看法..."></textarea>
+                </div>
+                <div class="col-sm-1">
+                    <button type="submit" class="btn btn-lg btn-default">评论</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <%comments.forEach(function(comment,index){%>
+        <div class="media comment-box">
+            <div class="media-left">
+                <a href="/user/mycenter?_id=<%=comment.author._id%>">
+                    <img class="comment-avatar" src= <%=comment.author.avatar%> alt="...">
+                    <p class="comment-user"><%=comment.author.username%></p>
+                </a>
+            </div>
+            <div class="media-body comment-content">
+                <%=comment.content%>
+            </div>
+            <p class="pull-right "><%=comment.date%></p>
+        </div>
+    <%})%>
+
+
+
+<%-include ../include/footer.ejs%>

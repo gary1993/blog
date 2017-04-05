@@ -1,0 +1,17 @@
+<%-include ../include/header.ejs%>
+
+<%articles.forEach(function(article,index){%>
+    <a href="/article/detail?_id=<%=article._id%>">
+        <div class="myCenter-box">
+            <div class="myCenter-pic-box pull-left">
+                <img src="<%=article.picture ? article.picture : '/images/defaultPic.jpg'%>">
+            </div>
+            <div class="myCenter-article pull-left">
+                <h4><%=article.topic%></h4>
+                <p><%=article.content%></p>
+            </div>
+        </div>
+    </a>
+<%})%>
+
+<%-include ../include/footer.ejs%>

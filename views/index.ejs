@@ -1,0 +1,52 @@
+<%-include include/header.ejs%>
+
+
+<%for(var i=0;i<articles.length;i++){%>
+    <%var article = articles[i]%>
+    <%if(i % 3 == 0){%>
+        <div class="row">
+    <%}%>
+
+    <div class="col-sm-6 col-md-4">
+        <a class="article-item" href="/article/detail?_id=<%=article._id%>">
+            <div class="thumbnail article-box">
+                <%if(article.picture){%>
+                <img class="article-picture" src=<%=article.picture%>>
+                <%}else {%>
+                <img class="article-picture" src="images/defaultPic.jpg">
+                <%}%>
+
+                <div class="caption">
+                    <h3 class="text-ellipsis"><%=article.topic%></h3>
+                    <p class="text-ellipsis"><%=article.content%></p>
+                    <p class="article-info">
+                        <img class="article-avatar"  src=<%=article.author.avatar%>/>
+                        <span class="article-username"><%=article.author.username%></span>
+                        <span class="article-date"><%=article.date%></span>
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <%if(i % 3 == 2 || i == articles.length - 1){%>
+        </div>
+    <%}%>
+<%}%>
+
+<ul class="pagination">
+    <li class= <%=(currentPage == 1 ? "disabled" : "")%>>
+        <a href= "/?page=<%=(currentPage == 1 ? currentPage : currentPage - 1)%>">&laquo;</a>
+    </li>
+    <%for(var i=1;i<=totalPage;i++){%>
+        <li class=<%=(i==currentPage ? "active": "")%>>
+            <a href="/?page=<%=i%>"><%=i%></a>
+        </li>
+    <%}%>
+    <li class= <%=(currentPage == totalPage ? "disabled" : "")%>>
+        <a href= "/?page=<%=(currentPage == totalPage ? currentPage : currentPage - 0 + 1)%>">&raquo;</a>
+    </li>
+</ul>
+
+<%-include include/footer.ejs%>
+

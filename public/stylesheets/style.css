@@ -1,0 +1,137 @@
+body{
+    padding-bottom: 100px;
+}
+.article-item{
+    text-decoration: none !important;
+}
+.article-box{
+    transition: all .3s;
+}
+.article-box:hover{
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    transform: translateY(-2px);
+}
+.article-picture{
+    padding: 10px;
+    height: 262px !important;
+}
+.text-ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.article-info{
+    overflow: hidden;
+}
+.article-avatar{
+    float: left;
+}
+.article-date{
+    float: right;
+    margin-top: 15px;
+}
+.article-username{
+    float: left;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+
+.img-box{
+    width: 100%;
+    text-align: center;
+    margin: 20px auto;
+}
+.detail-info{
+    overflow: hidden;
+}
+.handle-btn-wrapper{
+    overflow: hidden;
+}
+.handle-btn-wrapper a{
+    margin: 0 5px;
+}
+pre{
+    overflow: hidden;
+    font-size: 18px;
+}
+.update-pic{
+    height: 42px;
+    float: right;
+}
+
+.myCenter-pic-box{
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+}
+.myCenter-pic-box img{
+    max-width: 190px;
+    max-height: 140px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.myCenter-box{
+    overflow: hidden;
+    margin: 10px auto;
+    transition: all .3s;
+    padding: 4px;
+}
+.myCenter-box:hover{
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+}
+.myCenter-box:hover .myCenter-pic-box{
+    border: none;
+}
+.myCenter-article{
+    box-sizing: border-box;
+    margin-left: 20px;
+    width: 900px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 5px;
+    background: #9bc6d8;
+}
+.myCenter-article p{
+    border-top: 1px solid #ccc;
+    height: 80px;
+    word-break: break-all;
+    padding: 10px;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    line-height: 23px;
+}
+
+.comment-form{
+    margin: 50px auto;
+}
+
+.comment-box{
+    border-bottom: 1px solid #eee;
+    padding-top: 20px;
+}
+.comment-avatar{
+    width: 50px;
+}
+.comment-content{
+    font-size: 18px;
+}
+.comment-user{
+    max-width: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    padding-top: 10px;
+}
+
+
